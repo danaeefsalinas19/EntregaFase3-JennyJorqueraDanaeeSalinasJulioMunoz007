@@ -1,0 +1,89 @@
+{% extends "base_generic.html" %}
+
+{% block content %}
+
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Formulario para cotizaciones</title>
+  <meta charset="utf-8">
+  {% load static %}
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <link href="css/bootstrap.min.css" type="text/css" rel="stylesheet"> 
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+  <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>    
+
+  {% load static %}
+   <style>
+    body {
+    font-family: arial;
+    font-style:italic;
+    background-color: black;
+    color: rgb(82, 80, 80); 
+    }
+
+    h1{
+    font-family: fantasy;
+    color:white;
+    }
+
+    p{
+    color:white;
+    }
+
+    form{
+    background-color: rgb(3, 3, 3);
+    font-family: fantasy;
+    color:rgb(14, 13, 13);
+    
+    }
+    footer{
+    text-align: center;
+    }
+
+    hr{  
+    background-color: rgb(255, 0, 0);
+    }
+
+    li{
+      width: 100px;
+    }
+    
+  </style>
+ <br>
+ <br> <br> <br> <br> <br> <br> <br> <br> <br> <br>
+
+
+
+<div align="center" style="margin-left:20px;margin-top:20px">
+	<h1>Detalle de reserva</h1><br><br>
+
+
+	<h4>Código de reserva: {{reserva.codigo_reserva}}</h4>
+	<h4>Fecha evento: {{reserva.fecha_evento}}</h4>
+	<h4>Nombre cliente: {{reserva.nom_cliente}}</h4>
+	<h4>Apellido cliente: {{reserva.apell_cliente}}</h4>
+	<h4>Celular: {{reserva.celu_cliente}}</h4>
+	<h4>Email: {{reserva.email}}</h4>
+	<h4>Cantidad de personas : {{reserva.cant_personas}}</h4>
+	<h4>Total :{{reserva.total}}</h4>
+
+
+  <li class="nav-item mx-0 mx-lg-1">
+    <a class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger"  id="colorletras" href="{% url 'delete' pk=reserva.pk %}">Eliminar Reserva</a>
+  </li>
+
+  
+      <li class="nav-item mx-0 mx-lg-1">
+        <a class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger"  id="colorletras" href="{% url 'update' pk=reserva.pk %}">Editar Reserva</a>
+      </li>
+
+      
+      
+
+ 
+</div>
+{%endblock%}

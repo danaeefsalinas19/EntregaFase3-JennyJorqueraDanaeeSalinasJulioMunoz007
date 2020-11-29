@@ -1,0 +1,155 @@
+{% extends "base_generic.html" %}
+
+{% block content %}
+
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Formulario para cotizaciones</title>
+  <meta charset="utf-8">
+  {% load static %}
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <link href="css/bootstrap.min.css" type="text/css" rel="stylesheet"> 
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+  <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>    
+
+
+  <style>
+
+       
+    body {
+        font-family: arial;
+        font-style:italic;
+        background-color: black;
+        color: white;
+        
+      
+      }
+
+    h1{
+        font-family: fantasy;
+        color:white;
+      
+    }
+
+    h3{
+        font-family: fantasy;
+        color:white;
+      
+    }
+
+
+    input {
+        float: center;
+        width: 340px;
+        margin-bottom: 10px;
+    }
+
+    .error-control {
+        border: 1px solid red;
+    }
+
+    label.error {
+        color: red;
+        width: 300px;
+        font-size: 0.8em;
+        margin-top: -5px;
+        margin-bottom: 10px;
+        float: center;
+    }
+
+   
+    #cotizar{
+    background-color: rgb(255, 255, 255);
+    color: rgb(209, 0, 0);
+    color-adjust: rgb(255, 255, 255) ;
+
+    }
+   
+    #comentarioss{
+        width: 400px;
+         height:100px;
+    }
+
+    select{
+        float: center;
+        width:340px;
+    }
+
+    form{
+       
+        background-color: rgba(77, 77, 77, 0);
+        color: black;
+    }
+    footer{
+    text-align: center;
+    }
+
+    hr{  
+     background-color: rgb(255, 0, 0);
+    }
+
+    button {
+    text-align: center;
+    background-color: rgb(247, 242, 242);
+    color: rgb(247, 8, 8);
+    border-bottom-color: brown;
+ 
+    
+      
+
+
+   }
+
+   
+    
+
+  </style>
+    <header class="masthead">
+<!--===============================================================================================-->
+                 
+
+        
+                  <!--=======aqui codigo=======-->
+        <div class="page-section portfolio container page-section-heading text-uppercase text-secondary mb-0 text-center ">
+            <h2 class="page-section-heading text-center text-uppercase text-secondary mb-0">Borrar reserva</h2>
+            
+                <!-- Icon Divider -->
+            <div class="divider-custom">
+                <div class="divider-custom-line"></div>
+                <div class="divider-custom-icon">
+                    <i class="fas fa-book-open"></i>
+                </div>
+                <div class="divider-custom-line"></div>
+            </div>
+                
+            <br>
+            <center>
+                <br><br><br><br><br><br><br><br><br>
+            <h3>¿Estás seguro de borrar esta reserva?</h3>
+            <br>
+            <br>
+            <h4>Codigo cliente: </h4> <p class="texto text-center"> {{ reserva.codigo_reserva }}</p>
+            <h4>Nombre cliente: </h4> <p class="texto text-center"> {{ reserva.nom_cliente }}</p>
+           
+
+           
+            <br>
+            <br>
+
+            <form action="" method="POST">
+                {% csrf_token %}
+             <div style="width: 50%;">
+                <a href="{% url 'listado' %}"class="btn btn-primary btn-xl" style="float: left;">Atras</a>
+                <button href="{% url 'listado' %}" type="submit" class="save btn btn-primary btn-xl" style="float: right;">Borrar</button>
+             </div>
+             
+            </form>
+
+
+            {% endblock %}
+            
+           

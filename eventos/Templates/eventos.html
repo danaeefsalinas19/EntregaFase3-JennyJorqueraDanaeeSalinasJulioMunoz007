@@ -1,0 +1,290 @@
+{% extends "base_generic.html" %}
+
+{% block content %}
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Eventos</title> 
+  <meta charset="utf-8">
+  {% load static %}
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <link href="css/bootstrap.min.css" type="text/css" rel="stylesheet"> 
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+  <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>    
+
+
+
+  <style>
+    body {
+        font-family: Arial;
+        font-style: italic;
+        background-color: black;
+        color: rgb(0, 0, 0);
+      }
+    
+    footer{
+      color: white;
+      text-align: center;
+     
+
+    }
+    
+    hr{  
+    background-color: rgb(255, 0, 0);
+    }
+
+    h1{
+        font-family: fantasy;
+        text-align: center;
+        color:white;
+      
+    }
+    #boton{
+      background-color: rgb(10, 6, 6);
+      color: white;
+
+
+    }
+
+    #botone{
+      background-color: rgb(10, 6, 6);
+      color: white;
+      width: 100%;
+
+    }
+
+    li{
+    color: #000;
+    }
+    h4{
+      color: #000;
+    }
+
+    h5{
+      color: #000;
+    }
+
+
+      
+    
+  </style>
+
+</head>
+<body>
+  <br><br><br><br>
+  <hr>
+ 
+  <br>
+ 
+   
+  <div class="container" >   
+    <br>
+    <hr>
+    <h1>Eventos</h1>
+    <hr>
+    <br>
+    <div class="row">       
+      <div class="col-md">        
+          <div class="card">
+            <a href="descEventos.html"><img class="card-img-top" src="{% static 'images/corporativo1.jpg' %}"   >  </a>          
+            <div class="card-body">
+              <h4 class="card-title">Eventos Corporativos</h4>
+              <p class="card-text">Contamos con ambientes ideales para realizar diversos tipo de actividades como: 
+                                    seminarios, capacitaciones, fiestas corporativas, ferias laborales, etc.</p>
+         
+            </div>
+          </div>          
+      </div>
+
+     <div class="col-md">      
+      <div class="card">
+        <div class="card-body">
+              <h4 class="card-title">Eventos Sociales</h4>
+              <p class="card-text">Ponemos a vuestra disposición toda nuestra infraestructura para que tus invitados
+                                    disfruten de una celebración insuperable!. Puedes Celebrar: Matrimonios, Graduaciones,
+                                    Cumpleaños, Bautizos, Fiestas Tematicas, Pool Party, entre otras.</p>
+            
+            </div>
+            <a href="descEventos.html"><img class="card-img-bottom" src="{% static 'images/social1.jpg' %}" ></a>                       
+          </div>          
+      </div>
+
+      <div class="container"> 
+        <br>  
+        <hr>
+        <h1>Banqueteria</h1>
+        <hr>
+        <br>
+        <div class="row">       
+          <div class="col-md">        
+              <div class="card">
+                <a href="descEventos.html"><img class="card-img-top"  src="{% static 'images/cateringempresa.jpg' %}" ></a>            
+                <div class="card-body">
+                  <h4 class="card-title">Catering Corporativo</h4>
+                  <p class="card-text"> Para acompañar todas tus actividades contamos con variados menus:
+                                        para tus almuerzos, cenas, cóctel, coffe break, entre otras.
+                                        </p>
+                  
+                </div>
+              </div>          
+          </div>
+
+          <div class="col-md">        
+            <div class="card">
+              <div class="card-body">
+                <h4 class="card-title">Menú Matrimonios y otras celebraciones</h4>
+                <p class="card-text">Tú eliges: Almuerzos, cenas, cóctel, entre otras.
+                                      </p>
+              
+              </div>
+              <a href="descEventos.html"> <img class="card-img-top" src="{% static 'images/menumatri.jpg' %}" ></a>                     
+            
+            </div>          
+        </div>
+       
+    </div>
+  </div>
+</div>
+
+<div class="container"> 
+  {% load static %}
+  <br> 
+  <br>  
+  <hr>
+  <h1>Descripción de nuestros eventos</h1>
+  <hr>
+  <br>
+  <br>
+  <div class="row">  
+    
+    <div class="col-md">        
+        <div class="card">
+          <br> 
+          <h4 class="card-title">MENÚ EVENTOS EMPRESARIALES</h4>
+          <br> 
+          <img class="card-img-top" src="{% static 'images/menuempresas.jpg' %}" > 
+          <br> 
+          <p class="card-text"> Puedes elegir la alternativa que más se adapte a tu evento:</p> 
+          <div class="card-body">
+            
+            <br>
+              <h5>DESAYUNO BUFFET:</h5>
+              <br>
+              <ul>
+            <p class="card-text"></p> <ul>
+              <li> Medialunas </li>
+              <li> Pasta frola de membrillo</li>
+              <li> Mini alfajores con dulce de leche</li>
+              <li> Sandiwch pan molde Jamón/Palta</li>
+              <li> Yogurt de frutilla y vainilla con granola casera</li>
+              <li> Té, Café, Agua embotellada, Jugo de Naranja Natural, Agua de hierbas</li>
+            </li>
+            </ul>
+          <br>
+        
+            <h5>ALMUERZO:</h5>
+            <br>
+          <ul>
+            <li> ENTRADA: Burrata, tomates confitados, focaccia y pesto genovés </li>
+            <li> PLATO PRINCIPAL: Asado de costilla braseado, cake de quinoa, gremolata y vegetales confit</li>
+            <li> PLATO VEGETARIANO: Lasaña de vegetales y queso ahumado con salsa rosa *Solicitar si es necesario</li>
+            <li> POSTRE: Panna Cotta con compota de frutos rojos y granola crocante</li>
+            <li> BEBIDAS SIN ALCOHOL: Agua embotellada, Jugo Natural, Bebida a las piedras</li>
+          </li>
+          </ul>
+          <br>
+          <h5>CENA:</h5>
+          <br>
+            <ul>
+              <li> ENTRADA: Carpaccio de langostinos </li>
+              <li> PLATO PRINCIPAL: Lomo envuelto en panceta con filo de vegetales y salsa malbec</li>
+              <li> POSTRE: Brownie con helado de crema americana, salsa de frambuesa y frutos rojos</li >
+              <LI> BEBIDA CON ALCOHOL: Vino Cabernet- Sauvignon -Merlot</LI>
+              <li> BEBIDAS SIN ALCOHOL: Agua embotellada, Jugo Natural, Bebida a las piedras</li>
+            </li>
+            </ul>
+            <br>
+            <h5>COFFE BREACK:</h5>
+            <br>
+              <ul>
+                <li>LIQUIDOS: Café, Té, Infusiones, Agua Saborizada, Jugos Naturales</li>
+                <li>BOCADOS SALADOS: Mini sandwich pan masa madre, Champiñon asado, palta, tomate cherry, Salmón queso crema y berros</li>
+                <li>BOCADOS DULCES: Fruta de la estación, Stand granola casera con yogurt, galletón integral</li >
+              </li>
+              </ul>
+                                  </p>
+            
+          </div>
+        </div>  
+        <a href="{% url 'cotizacion' %}" id="botone" class="btn btn-primary">Solicitar Presupuesto</a>        
+    </div>
+
+
+    <br><br><br>
+    <!--Contenedor Menu Eventos Sociales-->
+    <div class="container"> 
+      <br> 
+      <br>
+      <div class="row">  
+          
+        <div class="col-md">        
+            <div class="card">
+              <br> 
+              <h4 class="card-title">MENÚ EVENTOS SOCIALES</h4>
+              <br> 
+              <img class="card-img-top"  src="{% static 'images/cenamatrimonio.jpg' %}">    
+              <br> 
+              <div class="card-body">
+                <p class="card-text"> Puedes elegir la alternativa que más se adapte a tu evento:</p>
+                <p class="card-text"></p> <ul>
+                  <br>
+                  <h5>CÓCTEL:</h5>
+                  <br>
+              <ul>
+                  <li>Canapé</li>
+                  <li>Tapaditos</li>
+                  <li>Brochetas Pollo y Carne</li>
+                  <li>Brochetas de frutas</li>
+                  <li>Aperitivos y Jugos</li>
+              </ul>
+              <br>
+              <h5>ALMUERZO:</h5>
+              <br>
+              <ul>
+                  <li>Entrada: Ensalada Taihiti</li>
+                  <li>Plato principal: Asado de tira a la carmenere con papa al merken</li>
+                  <li>Postre:Mousse de chocolate bitter</li>
+                  <li>Bebestibles: Bebida, vino tinto y blanco, aguas embotelladas</li>
+              </ul>
+              <br>
+              <h5>CENA:</h5>
+              <br>
+              <ul>
+                  <li>Entrada: Cous Cous Napolitano </li>
+                  <li>Plato principal: Asado mulato con pure rustico con puerros salteados</li>
+                  <li>Postre: Creme brule</li>
+                  <li>Bebestibles: Bebida, vino tinto y blanco, aguas embotelladas</li>
+              </ul>
+              <br>
+        </div>
+      
+        </div>
+        <a href="{% url 'cotizacion' %}" id="botone" class="btn btn-primary" >Solicitar Presupuesto</a>
+        <br> 
+        <br>
+    </div>
+    </div>
+
+
+
+ 
+
+</body>
+
+
+
+</html>
+{% endblock %}

@@ -1,0 +1,256 @@
+{% extends "base_generic.html" %}
+
+{% block content %}
+
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Formulario para cotizaciones</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <link href="css/bootstrap.min.css" type="text/css" rel="stylesheet"> 
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+  <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>    
+
+
+   <style>
+    body {
+        font-family: arial;
+        font-style:italic;
+        background-color: black;
+        color: white;
+        
+      
+      }
+
+    h1{
+        font-family: fantasy;
+        color:white;
+      
+    }
+
+
+    input {
+        float: center;
+        width: 340px;
+        margin-bottom: 10px;
+    }
+
+    .error-control {
+        border: 1px solid red;
+    }
+
+    label.error {
+        color: red;
+        width: 300px;
+        font-size: 0.8em;
+        margin-top: -5px;
+        margin-bottom: 10px;
+        float: center;
+    }
+
+   
+    #cotizar{
+      background-color: rgb(255, 255, 255);
+   color: rgb(209, 0, 0);
+   color-adjust: rgb(255, 255, 255) ;
+
+    }
+   
+    #comentarioss{
+        width: 400px;
+         height:100px;
+    }
+
+    select{
+        float: center;
+        width:340px;
+    }
+
+    form{
+       
+        background-color: rgba(77, 77, 77, 0);
+        color: black;
+    }
+    footer{
+    text-align: center;
+    }
+
+    hr{  
+     background-color: rgb(255, 0, 0);
+   }
+
+   
+
+    
+
+  </style>
+   <script>
+    $(function() 
+    {
+      $("#mi-formulario").validate({
+           rules: {
+                  nombre: "required",
+                  apellido: "required",
+                  rut: "required",
+                  email: {
+                        required: true,
+                        email: true
+                    },
+                  telefono: "required",
+                  fecha: "required",
+                  tipEventos: "required",
+                  tipCelebracion: "required",
+                  cantPers: "required",
+                  tipServicio:"required",
+                  tipMenu:"required"
+                
+                    
+              }, //rules
+            messages: {
+
+            nombre: {
+                  required: 'Ingrese su nombre',
+                  minlength: 'Ingrese un nombre válido'
+              },
+            apellido: {
+                  required: 'Ingrese su apellido',
+                  minlength: 'Caracteres insuficiente',
+                  min: 'Ingrese un apellido válido'
+              },
+            rut:{
+                required: 'Ingrese su rut',
+                minlength: 'Cantidad de digitos insuficiente'
+              },
+            email: {
+                     
+                    required: 'Ingresa tu correo electrónico',
+                    minlength: 'Formato de correo no válido',
+                    email: 'Formato de correo no válido'
+                },
+            telefono:{
+                  required: 'Ingrese un número de celular',
+                  minlength: ''
+              },
+            fecha:{
+                  required: 'Seleccione una fecha válida',
+                  min: 'Fecha no corresponde'
+              },
+            tipEventos:{
+                required: 'Seleccione el tipo de evento',
+              },
+            tipCelebracion:{
+                required: 'Seleccione el tipo de celebración',
+              },
+            cantPers:{
+                required: 'Seleccione cantidad de personas', 
+              },
+            tipServicio:{
+                required: 'Seleccione el tipo de servicio',
+              },
+            tipMenu:{
+                required: 'Seleccione el tipo de Menú',
+              }
+   
+          }//messages
+      }); //$('#mi-formulario').validate
+  }); //function
+
+</script>
+
+</head>
+<body >
+
+<hr>
+<form id="mi-formulario" action="index.html"   align="center" >
+ <br> <br> <br> <br> <br> <br>
+  <hr>
+             <h1 id="cotizar" ALIGN="CENTER">COTICE EN  DJJEVENTOS </h1>
+             <hr>
+            <br><br>
+            <input type="text" name="nombre" minlength="3"  required placeholder="Ingrese Nombre" >
+            <br><br>
+            
+            <input type="text" name="apellido" minlength="3" required placeholder="Ingrese Apellido" >
+            <br><br>
+
+            <input type="number" name="rut" minlength="9" required placeholder="Ingrese su Rut">
+            <br><br>
+            <input type="text" name="email" minlength="3" required placeholder="Ingrese@correo.com" >
+            <br><br>
+
+            <input type="number" name="telefono"   minlength="9"   required placeholder="Ingrese teléfono" >
+            <br><br>
+            
+            <input type="date" name="fecha" min="2020-09-09" required>
+            <br><br>
+            
+            <select  class="required"  name="tipEventos" >
+                <option value="">- Seleccione un evento -</option>
+                <option value="1">Evento Corporativo</option>
+                <option value="2">Evento Social</option>
+              </select>
+              <br><br>
+              
+              <select  class="required" name="tipCelebracion">
+                  <option value="">- Selecciona una celebración -</option>
+                  <option value="1">Matrimonios</option>
+                  <option value="2">Cumpleaños</option>
+                  <option value="3">Aniversarios</option>
+                  <option value="4">Bautizos</option>
+                  <option value="5">Graduación</option>
+                  <option value="6">Seminarios</option>
+                  <option value="7">Capacitaciones</option>
+                  <option value="8">Fiesta Corporativa</option>
+                  <option value="9">Ferias Laborales</option>
+                  <option value="10">Pool Party</option>
+                </select>
+              <br><br>
+         
+              <select  class="required" name="cantPers">
+                  <option value="">- Selecciona la cantidad de personas -</option>
+                  <option value="1">0 a 100 personas</option>
+                  <option value="2">100 a 150 personas</option>
+                  <option value="3">150 a 200 personas</option>
+                  <option value="4">200 a 300 personas</option>
+              </select>
+              <br><br>
+              <select  class="required" name="tipServicio">
+                  <option value="">- Selecciona el tipo de servicio -</option>
+                  <option value="1">Solo recinto</option>
+                  <option value="2">Completo</option>
+                  <option value="3">Utensilios</option>
+                  <option value="4">Otro</option>
+              </select>
+            <br><br>
+              <select  class="required" name="tipMenu">
+                  <option value="">- Selecciona un menú -</option>
+                  <option value="1">Desayuno Buffet</option>
+                  <option value="2">Almuerzo</option>
+                  <option value="3">Cena</option>
+                  <option value="4">Cóctel</option>
+                  <option value="5">Coffe Break</option>
+              </select>
+            <br><br>
+           
+            <textarea name="comentarios"  rows="10" cols="40" placeholder="Escriba su comentario"></textarea>
+            <br><br>
+        <button>Enviar</button>
+        <br><br>
+      </form>
+
+         
+
+
+    </body>
+
+
+   
+
+</html>
+{% endblock %}
+        
+        
