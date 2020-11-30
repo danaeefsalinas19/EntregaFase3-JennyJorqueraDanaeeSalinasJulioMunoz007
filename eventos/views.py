@@ -1,5 +1,5 @@
 from django.shortcuts import render
-from . models import reserva
+from . models import reserva, servicio
 from django.views import generic
 
 #importamos información para formularios
@@ -65,17 +65,32 @@ class reservaDelete(DeleteView):
     model = reserva
     success_url = reverse_lazy('index')
 
-'''
-class reservaDetailView(generic.DetailView):
-    model = reserva
-'''
-
 class ReservaListView(generic.ListView):
     model = reserva
     paginate_by = 10
 
 class ReservaDetailView(generic.DetailView):
     model = reserva
+
+#Servicios
+class servicioCreate(CreateView):
+    model = servicio
+    fields = '__all__'
+
+class servicioUpdate(UpdateView):
+    model = servicio
+    fields = ['codigo_servicio', 'nom_servicio', 'descripcion', 'precio_por_persona']
+
+class servicioDelete(DeleteView):
+    model = servicio
+    success_url = reverse_lazy('index')
+
+class ServicioListView(generic.ListView):
+    model = servicio
+    paginate_by = 10
+
+class ServicioDetailView(generic.DetailView):
+    model = servicio
     
     
 

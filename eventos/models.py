@@ -6,7 +6,7 @@ import uuid # Required for unique book instances
 
 class reserva(models.Model):
 	"""Model representing an reserva."""
-	codigo_reserva = models.CharField(max_length=10)
+	id = models.CharField( primary_key=True, max_length=10)
 	fecha_evento = models.DateField(null=True, blank=True)
 	nom_cliente = models.CharField(max_length=200)
 	apell_cliente = models.CharField(max_length=200)
@@ -20,4 +20,19 @@ class reserva(models.Model):
 	
 	def get_absolute_url(self):
 		return reverse('reserva_detalle', args=[str(self.id)])
+
+class servicio(models.Model):
+	"""Model representing an servicio."""
+
+	id = models.CharField(primary_key=True, max_length=10)
+	nom_servicio = models.CharField(max_length=200)
+	descripcion = models.CharField(max_length=200)
+	precio_por_persona = models.CharField(max_length=10)
+	
+
+	def __str__(self):
+		return self.codigo_servicio
+	
+	def get_absolute_url(self):
+		return reverse('servicio_detalle', args=[str(self.id)])
 

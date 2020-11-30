@@ -87,12 +87,28 @@
      background-color: rgb(255, 0, 0);
    }
 
+
+
    #boton {
     background-color: rgb(255, 0, 0);
       color: rgb(255, 255, 255);
       border-bottom-color: brown;
       width: 100%;
    }
+
+   #colorhref{
+  
+      color: rgb(255, 0, 0);
+    
+      font-size: 20px;
+      
+    
+      width: 100%;
+   }
+
+   
+
+   
   </style>
 
   <body>
@@ -104,9 +120,17 @@
   
 
       {% for reserva in reserva_list %}
-      <p >
-        <a href="{{ reserva.get_absolute_url }}">{{ reserva.codigo_reserva }}</a> {{ reserva.fecha_evento }} ({{reserva.total}})
-      </p>
+        <hr>
+      
+                <a id=colorhref href="{{ reserva.get_absolute_url }}">Gestionar esta reserva con el id: {{ reserva.id }}</a> 
+             
+                <hr>
+        
+                <h6>Nombre completo del cliente: {{ reserva.nom_cliente }} {{ reserva.apell_cliente }} </h6>
+                <h6>Fecha del evento: {{ reserva.fecha_evento }} </h6>
+                <h6>Valor por persona: ${{ reserva.total }} </h6>
+       
+              </p>
       {% endfor %}
 
 
