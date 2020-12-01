@@ -21,21 +21,21 @@
     body {
     font-family: arial;
     font-style:italic;
-    background-color: black;
+    background-color: rgba(16, 255, 160, 0.259);
     color: rgb(82, 80, 80); 
     }
 
     h1{
     font-family: fantasy;
-    color:white;
+    color:rgb(0, 0, 0);
     }
 
     p{
-    color:white;
+    color:rgb(0, 0, 0);
     }
 
     form{
-    background-color: rgb(3, 3, 3);
+    background-color: rgb(2, 2, 2);
     font-family: fantasy;
     color:rgb(14, 13, 13);
     
@@ -43,7 +43,13 @@
     footer{
     text-align: center;
     }
+    #colorletrass
+{
+  background-color: rgba(30, 0, 255, 0.8);
+    font-family: Verdana;
+    color:rgb(255, 255, 255);
 
+}
     hr{  
     background-color: rgb(255, 0, 0);
     }
@@ -54,28 +60,28 @@
     
   </style>
  <br>
- <br> <br> <br> <br> <br> <br> <br> <br> <br> <br>
-
+ <br> <br> <br> <br> 
 
 
 <div align="center" style="margin-left:20px;margin-top:20px">
-	<h1>Detalle de Servicios</h1><br><br>
+  <br> <br> <br> <br> <br> <br> <br> <br> <br> <br><br> 
+	<h1>Detalle del servicio creado</h1><br><br>
 
   <h4>Código del servicio: {{servicio.id}}</h4>
 
 	<h4>Nombre del servicio: {{servicio.nom_servicio}}</h4>
-	<h4>Descripcion del servicio: {{servicio.descripcion}}</h4>
+	<h4>Descripción del servicio: {{servicio.descripcion}}</h4>
 	<h4>Valor por persona: ${{servicio.precio_por_persona}}</h4>
 	
 
 
   <li class="nav-item mx-0 mx-lg-1">
-    <a class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger"  id="colorletras" href="{% url 'delete' pk=servicio.pk %}">Eliminar Servicio</a>
+    <a class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger"  id="colorletrass" href="{% url 'servicio_delete' pk=servicio.pk %}">Eliminar Servicio</a>
   </li>
 
   
       <li class="nav-item mx-0 mx-lg-1">
-        <a class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger"  id="colorletras" href="{% url 'update' pk=servicio.pk %}">Editar Servicio</a>
+        <a class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger"  id="colorletrass" href="{% url 'servicio_update' pk=servicio.pk %}">Editar Servicio</a>
       </li>
 
       

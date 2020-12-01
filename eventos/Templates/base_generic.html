@@ -16,25 +16,26 @@
 
 </head>
 
-<body id="page-top" >
+<body>
   {% load static %}
   <!-- Navigation -->
 
   <nav class="navbar navbar-expand-lg bg-secondary text-uppercase fixed-top" width="10%" height="10%" id="mainNav">
       <div class="container"  >
           
-        <button  data-toggle="collapse"  data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
-        
+        <button  data-toggle="collapse"  data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="true" aria-label="Toggle navigation">
+       
         <img src="{% static 'images/LOGO.PNG' %}" width="100%" height="100%" >
-          
+      
           <i class="fas fa-bars"></i>
+      
         </button>
-     
+    
+      
      
       <div  
         class="collapse navbar-expand-lg" id="navbarResponsive" >
-        
-
+      </div>
           <ul class="menu" >
            
             <li >
@@ -47,10 +48,11 @@
                 <a id="colorletras" href="{% url 'cotizacion' %}"  >Cotizar</a>
                 
               </li>
-              {% if user.is_authenticated  %}{% if user.is_staff %}
               <li >
-                  <a  id="colorletras" href="{% url 'reserva_create'%}" >Comprar un servicio</a>
-            </li>
+                <a  id="colorletras" href="{% url 'reserva_create'%}" >Reservar</a>
+          </li>
+              {% if user.is_authenticated  %}{% if user.is_staff %}
+              
             
             <li >
               <a id="colorletras" href="{% url 'listado'  %}"  >Listado Reservas</a>
@@ -59,6 +61,8 @@
       <li >
           <a  id="colorletras" href="{% url 'servicio_create' %}" >Gestionar Servicios</a>
     </li>
+  
+    
     {% else %}{% endif %}{% else %}{% endif %}
     <li >
       <a  id="colorletras" href="{% url 'listado2' %}"  >Listado Servicios</a>
@@ -78,6 +82,10 @@
           </ul> 
         </nav>
         </div>
+      </div>
+    
+
+
         
  
  
@@ -96,16 +104,22 @@ h3{
   background-color: rgba(163, 107, 255, 0.8);
 }
 
+#mainNav{
+  padding: 10;
 
+}
 button{
-  background-color: rgba(255, 255, 255, 0.8);
+  background-color: rgba(0, 0, 0, 0.8);
   color: rgb(255, 0, 0);
   width: 10%;
   height: 10%;
+  padding: 10;
 
 }
 footer{
 text-align: center;
+background-color: rgba(255, 255, 255, 0.734);
+
 }
 hr{  
   background-color: rgb(255, 0, 0);
@@ -125,9 +139,10 @@ width: 10%;
 
 .menu{
   list-style: none;
-  padding: 10;
-  background: #fbfbfb;
+  padding: 0;
+  background-color: rgba(98, 0, 255, 0.8);
   width:100%;
+  
   max-width: 1000px;
   margin: auto ;
   text-align:center;
@@ -139,7 +154,7 @@ width: 10%;
 
 .menu li a{
   text-decoration: none;
- 
+ color: aliceblue;
   padding: 20px;
   display: block;
   
@@ -151,7 +166,8 @@ width: 10%;
 }
 
 .menu li a:hover{
-  background: rgb(8, 8, 8) ;
+  background-color: rgba(163, 107, 255, 0.8);
+
 }
 
 
@@ -160,7 +176,9 @@ width: 10%;
 {% block content %}{% endblock %}
 
 <!-- Footer -->
+<br><br>
 <footer class="footer text-center">
+  <br><br>
  <div class="container">
    <div class="row">
 
@@ -204,6 +222,7 @@ width: 10%;
 
    </div>
  </div>
+ <br><br>
 </footer>
 
 <!-- Copyright Section -->
@@ -213,20 +232,6 @@ width: 10%;
  </div>
 </section>
  
- <!-- Bootstrap core JavaScript -->
- <script src="{% static 'vendor/jquery/jquery.min.js' %}"></script>
- <script src="{% static 'vendor/bootstrap/js/bootstrap.bundle.min.js' %}"></script>
-
- <!-- Plugin JavaScript -->
- <script src="{% static 'vendor/jquery-easing/jquery.easing.min.js' %}"></script>
-
- <!-- Contact Form JavaScript -->
- <script src="{% static 'js/jqBootstrapValidation.js' %}"></script>
- <script src="{% static 'js/contact_me.js' %}"></script>
- <script src="{% static 'js/autocompletar.js' %}"></script>
-
- <!-- Custom scripts for this template -->
- <script src="{% static 'js/freelancer.min.js' %}"></script>
 
 </body>
 </html>

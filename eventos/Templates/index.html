@@ -22,10 +22,12 @@
   body {
       font-family: Arial;
       font-style: italic;
-      background-color: black;
-      color: white;
-    }
+         background-color: rgba(16, 255, 160, 0.259);
 
+     
+   
+    }
+ 
   h3{
     font-family: cursive;
     background-color: rgba(163, 107, 255, 0.8);
@@ -44,7 +46,10 @@
     float: center;
   text-align: center;
   }
-
+  h3{
+  font-family: cursive;
+  background-color: rgba(163, 107, 255, 0.8);
+}
   hr{  
    background-color: rgb(255, 0, 0);
  }
@@ -63,15 +68,20 @@
  }
 
 </style>
-
-<body id="page-top">
+{% load static %}
+<body img src="{% static 'images/coctel.jpg' %}" id="page-top">
+  <br> <br><br><br><br><br><br><br>
+  
   <br> <br><br><br><br><br><br><br>
 <div  id="carousel1"  class="carousel slide carousel-fade" data-ride="carousel">
+
   <ol class="carousel-indicators" >
-    <li data-target="#carousel1"  data-slide-to="0" class="active"></li>
+   
+    <li data-target="#carousel1"  data-slide-to="0" class=""></li>
     <li data-target="#carousel1" data-slide-to="1"></li>
     <li data-target="#carousel1" data-slide-to="2"></li>
   </ol>
+ 
   <!-- diapositivas -->
   <div class="carousel-inner">
     <div class="carousel-item active">
@@ -114,7 +124,10 @@
     <span class="sr-only">Next</span>
   </a>
 </div>
+<div class="main">
+  
 
+</div>
 
 </body>
 </html>

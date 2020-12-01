@@ -24,15 +24,15 @@
     body {
         font-family: arial;
         font-style:italic;
-        background-color: rgb(44, 44, 44);
-        color: white;
+        background-color: rgba(16, 255, 160, 0.259);
+        color: rgb(0, 0, 0);
         
       
       }
 
     h1{
         font-family: fantasy;
-        color:white;
+        color:rgb(0, 0, 0);
       
     }
 
@@ -58,9 +58,9 @@
 
    
     #cotizar{
-      background-color: rgb(255, 255, 255);
+      background-color: rgb(0, 0, 0);
    color: rgb(209, 0, 0);
-   color-adjust: rgb(255, 255, 255) ;
+   color-adjust: rgb(0, 0, 0) ;
 
     }
    
@@ -74,11 +74,12 @@
         width:340px;
     }
 
-    form{
-       
-        background-color: rgba(77, 77, 77, 0);
-        color: black;
-    }
+    #form{background-color: rgb(0, 0, 0);
+      color: rgb(255, 255, 255);
+      border-bottom-color: rgb(255, 0, 0);
+      width: 100%;
+
+}
     footer{
     text-align: center;
     }
@@ -88,8 +89,8 @@
    }
 
    #boton {
-    background-color: rgb(255, 0, 0);
-      color: rgb(255, 255, 255);
+    background-color: rgb(138, 138, 138);
+      color: rgb(0, 0, 0);
       border-bottom-color: brown;
       width: 100%;
    }
@@ -97,7 +98,7 @@
    
    #colorhref{
   
-  color: rgb(255, 0, 0);
+  color: rgb(191, 255, 0);
 
   font-size: 20px;
   
@@ -106,32 +107,43 @@
 }
   </style>
 
-  <body>
-    <br><br><br><br><br><br><br><br><br>
-<div align="center" style="margin-left:20px;margin-top:20px">
-    <h1>Listado de Servicios</h1>
+<body img src="{% static 'images/LOGO.PNG' %}" id="page-top" >
 
+
+    <br><br><br><br><br><br><br><br><br>
+    
+<center>
+  <br><br><br>
+    <h1>Listado de Servicios</h1>
+  </center>
+    <div align="left" style="margin-left:20px;margin-top:20px">
     {% if servicio_list %}
   
 
       {% for servicio in servicio_list %}
       <p >
-        {% if user.is_authenticated  %}{% if user.is_staff %}
-<hr>
-        <a id=colorhref href="{{ servicio.get_absolute_url }}">Gestionar este servicio con el id: {{ servicio.id }}</a> 
-<br><br>
-{% else %}{% endif %}{% else %}{% endif %}
 
-{% if groups.is_authenticated  %}{% if groups.is_staff %}
-<a id=colorhref href="{{ servicio.get_absolute_url }}">Comprar este servicio con el id: {{ servicio.id }}</a> 
+        {% if user.is_authenticated  %}{% if user.is_staff %}
+        <br><br><br><br><br><br>
+        <div id=form>
+          <br><br><br>
+        <a id=colorhref href="{{ servicio.get_absolute_url }}">Gestionar este servicio con el id: {{ servicio.id }}</a>
+        <hr> 
+<br><br>
+</div>
+
 {% else %}{% endif %}{% else %}{% endif %}
-<h6>Codigo del servicio:  {{ servicio.id }}</h6> 
-        <h6>Nombre del servicio: {{ servicio.nom_servicio }} </h6>
-        <h6>Valor por persona: ${{ servicio.precio_por_persona }} </h6>
-        {% load static %}
-        <img class="card-img-top" src="{{ servicio.image.url }}">
-<hr>
+<div id=form>
+      <hr>
+        <h4>Nombre del servicio: {{ servicio.nom_servicio}} </h4>
+        <h4>Valor por persona: ${{ servicio.precio_por_persona }} </h4>
+        <h4>Descripción: {{ servicio.descripcion }} </h4>
+        
       </p>
+    
+      <br><br><br>
+      <hr>
+    </div>
       {% endfor %}
 
 

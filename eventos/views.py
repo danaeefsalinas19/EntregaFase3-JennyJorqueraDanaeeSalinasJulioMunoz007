@@ -10,22 +10,22 @@ from django.urls import reverse_lazy
 
 def index(request):
 
-    num_reserva = reserva.objects.all().count()
+    num_servicio = servicio.objects.all()
    
     return render(
         request,
         'index.html',
-        context={'num_reserva': num_reserva},
+        context={'num_servicio': num_servicio},
     )
 
 
 def eventos(request):
     
-    num_reserva = reserva.objects.all().count()
+    num_servicio = servicio.objects.all()
     return render(
         request,
         'eventos.html',
-        context={'num_reserva': num_reserva},
+        context={'num_servicio': num_servicio},
     )
 
 def cotizacion(request):
@@ -63,8 +63,8 @@ class reservaCreate(CreateView):
 
 class reservaUpdate(UpdateView):
     model = reserva
-    fields = ['codigo_reserva', 'fecha_evento', 'nom_cliente', 'apell_cliente',
-                'celu_cliente', 'email', 'cant_personas', 'total']
+    fields = ['id', 'fecha_del_evento', 'Servicio', 'Nombre',
+                'Apellido', 'Celular', 'Email', 'Cantidad_de_personas','Comentarios']
 
 class reservaDelete(DeleteView):
     model = reserva
@@ -79,12 +79,14 @@ class ReservaDetailView(generic.DetailView):
 
 #Servicios
 class servicioCreate(CreateView):
+    num_servicio = servicio.objects.all()
+    context={'num_servicio': num_servicio},
     model = servicio
     fields = '__all__'
 
 class servicioUpdate(UpdateView):
     model = servicio
-    fields = ['codigo_servicio', 'nom_servicio', 'descripcion', 'precio_por_persona']
+    fields = ['id', 'nom_servicio', 'precio_por_persona']
 
 class servicioDelete(DeleteView):
     model = servicio

@@ -18,10 +18,10 @@ urlpatterns = [
 
 urlpatterns += [
     path('reserva/create/', views.reservaCreate.as_view(), name='reserva_create'),
-    path('reserva/<str:pk>/update/', views.reservaUpdate.as_view(), name='update'),
-    path('reserva/<str:pk>/delete/', views.reservaDelete.as_view(), name='delete'),
+    path('reserva/<str:pk>/update/', views.reservaUpdate.as_view(), name='reserva_update'),
+    path('reserva/<str:pk>/delete/', views.reservaDelete.as_view(), name='reserva_delete'),
     path('servicio/create/', views.servicioCreate.as_view(), name='servicio_create'),
-    path('servicio/<str:pk>/update/', views.servicioUpdate.as_view(), name='update'),
-    path('servicio/<str:pk>/delete/', views.servicioDelete.as_view(), name='delete'),
+    path('servicio/<str:pk>/update/', views.servicioUpdate.as_view(), name='servicio_update'),
+    path('servicio/<str:pk>/delete/', views.servicioDelete.as_view(), name='servicio_delete'),
 ]
 

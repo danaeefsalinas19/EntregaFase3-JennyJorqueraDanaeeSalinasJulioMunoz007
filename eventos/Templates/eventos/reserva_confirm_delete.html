@@ -21,23 +21,22 @@
 
        
     body {
-        font-family: arial;
-        font-style:italic;
-        background-color: black;
-        color: white;
-        
-      
-      }
+            font-family: arial;
+            font-style:italic;
+            background-color: rgba(16, 255, 160, 0.259);
+            color: rgb(0, 0, 0); 
+            }
+
 
     h1{
         font-family: fantasy;
-        color:white;
+        color:rgb(0, 0, 0);
       
     }
 
     h3{
         font-family: fantasy;
-        color:white;
+        color:rgb(0, 0, 0);
       
     }
 
@@ -129,12 +128,14 @@
             <br>
             <center>
                 <br><br><br><br><br><br><br><br><br>
+                <br><br><br><br><br><br><br>
             <h3>¿Estás seguro de borrar esta reserva?</h3>
             <br>
             <br>
-            <h4>Codigo cliente: </h4> <p class="texto text-center"> {{ reserva.codigo_reserva }}</p>
-            <h4>Nombre cliente: </h4> <p class="texto text-center"> {{ reserva.nom_cliente }}</p>
-           
+            <h4>Rut del cliente: </h4> <p class="texto text-center"> {{ reserva.id }}</p>
+            <h4>Nombre cliente: </h4> <p class="texto text-center"> {{ reserva.Nombre }} {{ reserva.Apellido }}</p>
+            <h4>Tipo de servicio: </h4> <p class="texto text-center"> {{ reserva.Servicio }}</p>
+            <h4>Cantidad de personas: </h4> <p class="texto text-center"> {{ reserva.Cantidad_de_personas }}</p>
 
            
             <br>
@@ -144,7 +145,7 @@
                 {% csrf_token %}
              <div style="width: 50%;">
                 <a href="{% url 'listado' %}"class="btn btn-primary btn-xl" style="float: left;">Atras</a>
-                <button href="{% url 'listado' %}" type="submit" class="save btn btn-primary btn-xl" style="float: right;">Borrar</button>
+                <button type="submit" class="save btn btn-primary btn-xl" style="float: right;">Borrar</button>
              </div>
              
             </form>

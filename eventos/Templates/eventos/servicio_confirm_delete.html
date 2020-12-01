@@ -23,11 +23,9 @@
     body {
         font-family: arial;
         font-style:italic;
-        background-color: black;
-        color: white;
-        
-      
-      }
+        background-color: rgba(16, 255, 160, 0.259);
+        color: rgb(82, 80, 80); 
+        }
 
     h1{
         font-family: fantasy;
@@ -92,17 +90,7 @@
      background-color: rgb(255, 0, 0);
     }
 
-    button {
-    text-align: center;
-    background-color: rgb(247, 242, 242);
-    color: rgb(247, 8, 8);
-    border-bottom-color: brown;
- 
     
-      
-
-
-   }
 
    
     
@@ -132,7 +120,8 @@
             <h3>¿Estás seguro de borrar este servicio?</h3>
             <br>
             <br>
-            <h4>Codigo Servicio: </h4> <p class="texto text-center"> {{ servicio.codigo_servicio }}</p>
+            <h4>Código Servicio: </h4> <p class="texto text-center"> {{ servicio.id }}</p>
+
             <h4>Nombre Servicio: </h4> <p class="texto text-center"> {{ servicio.nom_servicio }}</p>
            
 
@@ -143,8 +132,8 @@
             <form action="" method="POST">
                 {% csrf_token %}
              <div style="width: 50%;">
-                <a href="{% url 'listado' %}"class="btn btn-primary btn-xl" style="float: left;">Atras</a>
-                <button href="{% url 'listado' %}" type="submit" class="save btn btn-primary btn-xl" style="float: right;">Borrar</button>
+                <a href="{% url 'index' %}"class="btn btn-primary btn-xl" style="float: left;">Pagina principal</a>
+                <a href="{% url 'index' %}" type="submit" class="save btn btn-primary btn-xl" style="float: right;">Borrar</a>
              </div>
              
             </form>

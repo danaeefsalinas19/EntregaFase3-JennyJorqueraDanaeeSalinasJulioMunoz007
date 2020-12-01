@@ -19,19 +19,20 @@
   {% load static %}
    <style>
     body {
-    font-family: arial;
-    font-style:italic;
-    background-color: black;
-    color: rgb(82, 80, 80); 
-    }
+      font-family: Arial;
+      font-style: italic;
+         background-color: rgba(16, 255, 160, 0.259);
 
+     
+   
+    }
     h1{
     font-family: fantasy;
-    color:white;
+    color:rgb(0, 0, 0);
     }
 
     p{
-    color:white;
+    color:rgb(0, 0, 0);
     }
 
     form{
@@ -53,8 +54,15 @@
     }
 
     h4{
-      color: rgb(255, 255, 255);
+      color: rgb(0, 0, 0);
     }
+    h3{
+    font-family: cursive;
+    background-color: rgba(68, 68, 68, 0.8);
+      
+    width: 30%;
+    height: 3%; 
+}
     
   </style>
  <br>
@@ -64,25 +72,27 @@
 
 <div align="center" style="margin-left:20px;margin-top:20px">
 	<h1>Detalle de reserva</h1><br><br>
+  <h3>Servicio pedido: {{reserva.Servicio}}</h3>
+  <br> <br> <br>
 
-
-	<h4>Código de reserva: {{reserva.codigo_reserva}}</h4>
-	<h4>Fecha evento: {{reserva.fecha_evento}}</h4>
-	<h4>Nombre cliente: {{reserva.nom_cliente}}</h4>
-	<h4>Apellido cliente: {{reserva.apell_cliente}}</h4>
-	<h4>Celular: {{reserva.celu_cliente}}</h4>
-	<h4>Email: {{reserva.email}}</h4>
-	<h4>Cantidad de personas : {{reserva.cant_personas}}</h4>
-	<h4>Total : ${{reserva.total}}</h4>
+	<h4>Su Rut: {{reserva.id}}</h4>
+	<h4>Fecha evento: {{reserva.fecha_del_evento}}</h4>
+	<h4>Nombre : {{reserva.Nombre}}</h4>
+  <h4>Apellido : {{reserva.Apellido}}</h4>
+  
+	<h4>Celular: {{reserva.Celular}}</h4>
+	<h4>Email: {{reserva.Email}}</h4>
+	<h4>Cantidad de personas : {{reserva.Cantidad_de_personas}}</h4>
+	<h4>Su comentario : {{reserva.Comentarios}}</h4>
 
   {% if user.is_authenticated  %}{% if user.is_staff %}
   <li class="nav-item mx-0 mx-lg-1">
-    <a class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger"  id="colorletras" href="{% url 'delete' pk=reserva.pk %}">Eliminar Reserva</a>
+    <a class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger"  id="colorletras" href="{% url 'reserva_delete' pk=reserva.pk %}">Eliminar Reserva</a>
   </li>
 
   
       <li class="nav-item mx-0 mx-lg-1">
-        <a class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger"  id="colorletras" href="{% url 'update' pk=reserva.pk %}">Editar Reserva</a>
+        <a class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger"  id="colorletras" href="{% url 'reserva_update' pk=reserva.pk %}">Editar Reserva</a>
       </li>
 
       {% else %}{% endif %}{% else %}{% endif %}
