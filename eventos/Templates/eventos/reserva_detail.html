@@ -51,6 +51,10 @@
     li{
       width: 100px;
     }
+
+    h4{
+      color: rgb(255, 255, 255);
+    }
     
   </style>
  <br>
@@ -61,7 +65,7 @@
 <div align="center" style="margin-left:20px;margin-top:20px">
 	<h1>Detalle de reserva</h1><br><br>
 
-  
+
 	<h4>Código de reserva: {{reserva.codigo_reserva}}</h4>
 	<h4>Fecha evento: {{reserva.fecha_evento}}</h4>
 	<h4>Nombre cliente: {{reserva.nom_cliente}}</h4>
@@ -71,7 +75,7 @@
 	<h4>Cantidad de personas : {{reserva.cant_personas}}</h4>
 	<h4>Total : ${{reserva.total}}</h4>
 
-
+  {% if user.is_authenticated  %}{% if user.is_staff %}
   <li class="nav-item mx-0 mx-lg-1">
     <a class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger"  id="colorletras" href="{% url 'delete' pk=reserva.pk %}">Eliminar Reserva</a>
   </li>
@@ -81,6 +85,8 @@
         <a class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger"  id="colorletras" href="{% url 'update' pk=reserva.pk %}">Editar Reserva</a>
       </li>
 
+      {% else %}{% endif %}{% else %}{% endif %}
+<hr>
       
       
 

@@ -18,11 +18,14 @@ def index(request):
         context={'num_reserva': num_reserva},
     )
 
+
 def eventos(request):
-   
+    
+    num_reserva = reserva.objects.all().count()
     return render(
         request,
         'eventos.html',
+        context={'num_reserva': num_reserva},
     )
 
 def cotizacion(request):
@@ -47,6 +50,8 @@ def reservas(request):
         request,
         'reservas.html',
     )
+
+    
 
 
 

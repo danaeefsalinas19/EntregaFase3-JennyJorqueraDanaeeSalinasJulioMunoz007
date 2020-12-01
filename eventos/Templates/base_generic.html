@@ -45,23 +45,25 @@
             </li>
             <li >
                 <a id="colorletras" href="{% url 'cotizacion' %}"  >Cotizar</a>
-                {% if user.is_authenticated  %}{% if user.is_staff %}
+                
               </li>
+              {% if user.is_authenticated  %}{% if user.is_staff %}
               <li >
-                  <a  id="colorletras" href="{% url 'reserva_create'%}" >Gestionar Reservas</a>
+                  <a  id="colorletras" href="{% url 'reserva_create'%}" >Comprar un servicio</a>
             </li>
-         
+            
             <li >
               <a id="colorletras" href="{% url 'listado'  %}"  >Listado Reservas</a>
         </li>
-     
+       
       <li >
           <a  id="colorletras" href="{% url 'servicio_create' %}" >Gestionar Servicios</a>
     </li>
-    
+    {% else %}{% endif %}{% else %}{% endif %}
     <li >
       <a  id="colorletras" href="{% url 'listado2' %}"  >Listado Servicios</a>
-      {% else %}{% endif %}{% else %}{% endif %}
+     
+      
 </li>
 {% if user.is_authenticated  %}
 
@@ -79,8 +81,6 @@
         
  
  
-<hr>
-<br>
 
 {% load static %}
 <style>
@@ -151,7 +151,7 @@ width: 10%;
 }
 
 .menu li a:hover{
-  background: rgb(255, 255, 255) ;
+  background: rgb(8, 8, 8) ;
 }
 
 

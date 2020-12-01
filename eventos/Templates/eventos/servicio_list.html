@@ -24,7 +24,7 @@
     body {
         font-family: arial;
         font-style:italic;
-        background-color: black;
+        background-color: rgb(44, 44, 44);
         color: white;
         
       
@@ -116,12 +116,20 @@
 
       {% for servicio in servicio_list %}
       <p >
+        {% if user.is_authenticated  %}{% if user.is_staff %}
 <hr>
         <a id=colorhref href="{{ servicio.get_absolute_url }}">Gestionar este servicio con el id: {{ servicio.id }}</a> 
 <br><br>
-        <h6>Codigo del servicio:  {{ servicio.id }}</h6> 
+{% else %}{% endif %}{% else %}{% endif %}
+
+{% if groups.is_authenticated  %}{% if groups.is_staff %}
+<a id=colorhref href="{{ servicio.get_absolute_url }}">Comprar este servicio con el id: {{ servicio.id }}</a> 
+{% else %}{% endif %}{% else %}{% endif %}
+<h6>Codigo del servicio:  {{ servicio.id }}</h6> 
         <h6>Nombre del servicio: {{ servicio.nom_servicio }} </h6>
         <h6>Valor por persona: ${{ servicio.precio_por_persona }} </h6>
+        {% load static %}
+        <img class="card-img-top" src="{{ servicio.image.url }}">
 <hr>
       </p>
       {% endfor %}

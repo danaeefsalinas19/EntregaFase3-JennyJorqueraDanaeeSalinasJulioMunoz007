@@ -16,7 +16,7 @@ class reserva(models.Model):
 	total = models.IntegerField(default=0)
 
 	def __str__(self):
-		return self.codigo_reserva
+		return self.id
 	
 	def get_absolute_url(self):
 		return reverse('reserva_detalle', args=[str(self.id)])
@@ -28,10 +28,10 @@ class servicio(models.Model):
 	nom_servicio = models.CharField(max_length=200)
 	descripcion = models.CharField(max_length=200)
 	precio_por_persona = models.CharField(max_length=10)
-	
+	image= models.ImageField(upload_to='images/', null=True, blank=True)
 
 	def __str__(self):
-		return self.codigo_servicio
+		return self.id
 	
 	def get_absolute_url(self):
 		return reverse('servicio_detalle', args=[str(self.id)])
