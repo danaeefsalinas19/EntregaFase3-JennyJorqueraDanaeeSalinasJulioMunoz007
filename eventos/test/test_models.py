@@ -4,7 +4,6 @@ from eventos.models import reserva
 class reservaTestCase(TestCase):
     
     
-    @classmethod
 
 
     def setUp(self):
