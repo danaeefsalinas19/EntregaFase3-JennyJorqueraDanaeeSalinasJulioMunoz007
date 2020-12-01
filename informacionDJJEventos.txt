@@ -1,0 +1,19 @@
+Usuario administrador----
+
+usuario:JennyJorquera
+contraseña:fase2
+
+usuario:Danaee19
+contraseña:dolce1902
+
+
+usuario:Julio_M
+contraseña:Julio20
+
+
+Personal----
+
+usuario: usuario
+contraseña:djjeventos2020
+
+Pagina principal (index)->http://127.0.0.1:8000/eventos/
